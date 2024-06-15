@@ -28,6 +28,7 @@ public class ResultPageManager : MonoBehaviour
     [SerializeField] private Toggle temperatureToggle;
     [SerializeField] private Toggle volumeToggle;
     [SerializeField] private Button backButton;
+    [SerializeField] private GameObject[] heartParticles;
     
     
     // Start is called before the first frame update
@@ -58,5 +59,21 @@ public class ResultPageManager : MonoBehaviour
         Debug.Log("avgScore:" + avgScore);
         perText.text = "レベル：" + avgScore;
         detailText.text = _results[avgScore-1];
+        
+        DisableAllParticles();
+        heartParticles[avgScore-1].SetActive(true);
+    }
+    
+    private void OnDisable()
+    {
+        DisableAllParticles();
+    }
+    
+    private void DisableAllParticles()
+    {
+        foreach (var particle in heartParticles)
+        {
+            particle.SetActive(false);
+        }
     }
 }
