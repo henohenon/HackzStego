@@ -19,8 +19,13 @@ public class ResultPageManager : MonoBehaviour
         {"10%", "ボロボロ"}
     };
     
+    [SerializeField]
+    private ScoringManager _scoringManager;
     [SerializeField] private Text perText;
     [SerializeField] private Text detailText;
+    [SerializeField] private Toggle brightnessToggle;
+    [SerializeField] private Toggle temperatureToggle;
+    [SerializeField] private Toggle volumeToggle;
     [SerializeField] private Button backButton;
     
     
@@ -30,6 +35,18 @@ public class ResultPageManager : MonoBehaviour
         backButton.onClick.AddListener(() =>
         {
             _restart.OnNext(Unit.Default); 
+        });
+        _scoringManager.BrightnessLevel.Subscribe(level =>
+        {
+            brightnessToggle.isOn = level > 3;
+        });
+        _scoringManager.TemperatureLevel.Subscribe(level =>
+        {
+            temperatureToggle.isOn = level > 3;
+        });
+        _scoringManager.VolumeLevel.Subscribe(level =>
+        {
+            volumeToggle.isOn = level > 3;
         });
     }
 

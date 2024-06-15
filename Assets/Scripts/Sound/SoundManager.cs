@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text text;
+    public float VolumeRate { get; private set; }
     
     private AudioClip microphoneClip;
     private string microphone;
@@ -25,9 +25,7 @@ public class SoundManager : MonoBehaviour
     {
         if (Microphone.IsRecording(microphone))
         {
-            float volume = GetAverageVolume();
-            text.text = volume.ToString();
-            Debug.Log("Current Volume: " + volume);
+            VolumeRate = GetAverageVolume();
         }
     }
 
