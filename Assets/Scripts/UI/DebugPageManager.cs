@@ -8,8 +8,6 @@ using TMPro;
 
 public class DebugPageManager : MonoBehaviour
 {
-    [SerializeField] private LightEstimate _lightEstimate;
-    [SerializeField] private SoundManager _soundManager;
     [SerializeField] private ScoringManager _scoringManager;
     [SerializeField] private TMP_Text brightLevel;
     [SerializeField] private TMP_Text temperatureLevel;
@@ -35,10 +33,10 @@ public class DebugPageManager : MonoBehaviour
         });
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        brightValue.text = _lightEstimate.Brightness.ToString();
-        temperatureValue.text = _lightEstimate.ColorTemperature.ToString();
-        volumeValue.text = _soundManager.VolumeRate.ToString();
+        brightValue.text = _scoringManager.Info.Brightness.ToString();
+        temperatureValue.text = _scoringManager.Info.ColorTemperature.ToString();
+        volumeValue.text = _scoringManager.Info.VolumeRate.ToString();
     }
 }
