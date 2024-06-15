@@ -1,18 +1,39 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityScreenNavigator.Runtime.Core.Page;
+using R3;
 
-[RequireComponent(typeof(PageContainer))]
 public class GameManager : MonoBehaviour
 {
-    private PageContainer _container;
-
-    private void Awake()
+    [SerializeField]
+    private SearchPageManger searchPageManger;
+    [SerializeField] private GameObject searchingObj;
+    [SerializeField]
+    private ResultPageManager resultPageManager;
+    
+    
+    private void Start()
     {
-        _container = GetComponent<PageContainer>();
-        _container.Push("SearchPage", true);
+        searchPageManger.gameObject.SetActive(true);
+        searchingObj.SetActive(false);
+        resultPageManager.gameObject.SetActive(false);
+
+        searchPageManger.OnSearch.Subscribe(async (_) =>
+        {
+            searchingObj.SetActive(true);
+            await UniTask.Delay(TimeSpan.FromSeconds(3));
+            searchingObj.SetActive(false);
+            resultPageManager.gameObject.SetActive(true);
+            searchPageManger.gameObject.SetActive(false);
+        });
+        
+        resultPageManager.OnReset.Subscribe(async (_) =>
+        {
+            resultPageManager.gameObject.SetActive(false);
+            searchPageManger.gameObject.SetActive(true);
+        });
     }
 }

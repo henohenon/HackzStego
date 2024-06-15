@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityScreenNavigator.Runtime.Core.Page;
+using R3;
 
-[RequireComponent(typeof(Page))]
 public class ResultPageManager : MonoBehaviour
 {
+    private Subject<Unit> _onReset = new Subject<Unit>();
+    public Observable<Unit> OnReset => _onReset;
+    
+    
     private string[,] _results = new string[3, 2]
     {
         {"100%", "フィーバー¥nカーニバル"},
@@ -18,15 +21,11 @@ public class ResultPageManager : MonoBehaviour
     [SerializeField] private Text perText;
     [SerializeField] private Text detailText;
     [SerializeField] private Button backButton;
-
-    private PageContainer _container;
     
     
     // Start is called before the first frame update
-    async void Start()
+    async void Awake()
     {
-        _container = FindObjectOfType<PageContainer>();
-        
         // ランダムに結果を表示
         var result = Random.Range(0, 3);
         perText.text = _results[result, 0];
@@ -34,7 +33,7 @@ public class ResultPageManager : MonoBehaviour
         
         backButton.onClick.AddListener(() =>
         {
-            _container.Pop(true);
+            _onReset.OnNext(Unit.Default);
         });
     }
     
