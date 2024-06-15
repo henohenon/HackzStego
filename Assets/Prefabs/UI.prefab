@@ -277,7 +277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17445482f5c9b498bb4eebde37e49f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clapManager: {fileID: 867223515123844308}
 --- !u!1 &867223515123844308
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5129324790953933235
 Transform:
   m_ObjectHideFlags: 0
@@ -322,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e560200d557d04e7b9e891a8bf8def0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 4315057696742776212}
   lowFrequency: 10000
   highFrequency: 21000
   amplitudeThreshold: 0.003
