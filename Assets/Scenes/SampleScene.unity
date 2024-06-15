@@ -956,6 +956,10 @@ PrefabInstance:
       propertyPath: lightEstimate
       value: 
       objectReference: {fileID: 705507996}
+    - target: {fileID: 6225295027022912382, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6864156859113376946, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_Type
       value: 0

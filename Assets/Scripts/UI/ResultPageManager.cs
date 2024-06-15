@@ -51,17 +51,19 @@ public class ResultPageManager : MonoBehaviour
         {
             volumeToggle.isOn = level > 3;
         });
+        
+        _resultByLevel = GetComponent<ResultByLevelManager>();
     }
 
 
     private void OnEnable()
     {
-        var avgScore = (ushort)Mathf.Round(_scoringManager.GetAvgScore());
+        var avgScore = (int)Mathf.Round(_scoringManager.GetAvgScore());
         Debug.Log("avgScore:" + avgScore);
         perText.text = "レベル：" + avgScore;
         detailText.text = _results[avgScore-1];
 
-        _resultByLevel.ChangeLevel(avgScore);
+        _resultByLevel.ChangeLevel(avgScore-1);
     }
     
 }

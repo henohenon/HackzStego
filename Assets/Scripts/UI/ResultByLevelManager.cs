@@ -7,7 +7,7 @@ public class ResultByLevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] particles;
 
-    public void DisableAll()
+    private void DisableAll()
     {
         for (var i = 0; i < 5; i++)
         {
@@ -15,7 +15,7 @@ public class ResultByLevelManager : MonoBehaviour
         }
     }
     
-    public void ChangeLevel(ushort level)
+    public void ChangeLevel(int level)
     {
         DisableAll();
         
