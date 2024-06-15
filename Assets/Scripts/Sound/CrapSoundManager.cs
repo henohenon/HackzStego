@@ -9,9 +9,9 @@ public class CrapSoundManager : MonoBehaviour
     private float[] spectrumData;
     private float previousVolume = 0f;
     private float clapThreshold = 0.2f; // 拍手を検知するための閾値
-    private float frequencyThreshold = 0.1f; // 周波数成分の閾値
-    private int lowFrequency = 2000; // 低い周波数範囲
-    private int highFrequency = 4000; // 高い周波数範囲
+    private float frequencyThreshold = 0.00001f; // 周波数成分の閾値
+    private int lowFrequency = 1000; // 低い周波数範囲
+    private int highFrequency = 1500; // 高い周波数範囲
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class CrapSoundManager : MonoBehaviour
             float dominantFrequencyAmplitude = GetDominantFrequencyAmplitude();
             Debug.Log(dominantFrequencyAmplitude);
 
-            if (Mathf.Abs(currentVolume - previousVolume) > clapThreshold && dominantFrequencyAmplitude > frequencyThreshold)
+            if (dominantFrequencyAmplitude != 0)
             {
                 Debug.Log("Clap detected!");
                 // 拍手が検知されたときの処理をここに追加
@@ -55,7 +55,6 @@ public class CrapSoundManager : MonoBehaviour
         }
         return Mathf.Sqrt(sum / sampleWindow);
     }
-
     float GetDominantFrequencyAmplitude()
     {
         int position = Microphone.GetPosition(microphone) - sampleWindow + 1;
@@ -64,18 +63,18 @@ public class CrapSoundManager : MonoBehaviour
         microphoneClip.GetData(sampleData, position);
         AudioListener.GetSpectrumData(spectrumData, 0, FFTWindow.BlackmanHarris);
 
-        float maxAmplitude = 0f;
         int lowIndex = Mathf.FloorToInt(lowFrequency * sampleWindow / 44100);
         int highIndex = Mathf.CeilToInt(highFrequency * sampleWindow / 44100);
 
         for (int i = lowIndex; i <= highIndex; i++)
         {
-            if (spectrumData[i] > maxAmplitude)
+            Debug.Log(spectrumData[i]);
+            if (spectrumData[i] > frequencyThreshold)
             {
-                maxAmplitude = spectrumData[i];
+                return spectrumData[i]; // 閾値を超えた振幅を返す
             }
         }
 
-        return maxAmplitude;
+        return 0f; // 閾値を超える振幅がない場合
     }
 }
