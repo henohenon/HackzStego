@@ -1207,12 +1207,10 @@ MonoBehaviour:
   - {fileID: 962906696919432005}
   - {fileID: 8595154813743389423}
   - {fileID: 1944731817056026117}
-
   fog_particles:
   - {fileID: 7112210384544895193}
   - {fileID: 7959774022209007086}
   - {fileID: 4614104958317099601}
-
   stars:
   - {fileID: 2485051347272777116}
   - {fileID: 3959178666849147200}
@@ -1292,7 +1290,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-
 --- !u!1 &8340408644171242651
 GameObject:
   m_ObjectHideFlags: 0

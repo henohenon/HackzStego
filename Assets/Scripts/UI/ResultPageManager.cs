@@ -23,7 +23,6 @@ public class ResultPageManager : MonoBehaviour
     
     [SerializeField]
     private ScoringManager _scoringManager;
-    [SerializeField] private Text perText;
     [SerializeField] private Text detailText;
     [SerializeField] private Toggle brightnessToggle;
     [SerializeField] private Toggle temperatureToggle;
@@ -60,7 +59,6 @@ public class ResultPageManager : MonoBehaviour
     {
         var avgScore = (int)Mathf.Round(_scoringManager.GetAvgScore());
         Debug.Log("avgScore:" + avgScore);
-        perText.text = "レベル：" + avgScore;
         detailText.text = _results[avgScore-1];
 
         _resultByLevel.ChangeLevel(avgScore-1);
