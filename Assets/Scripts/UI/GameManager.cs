@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
                 resultPageManager.gameObject.SetActive(false);
                 break;
             case Page.Searching:
-                searchPageManger.gameObject.SetActive(true);
+                searchPageManger.gameObject.SetActive(false);
                 searchingObj.SetActive(true);
                 resultPageManager.gameObject.SetActive(false);
                 break;
