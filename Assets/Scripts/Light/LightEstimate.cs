@@ -13,7 +13,8 @@ public class LightEstimate : MonoBehaviour
     [SerializeField] private TextMeshProUGUI colorTemperatureText;
     [SerializeField] private TextMeshProUGUI brightnessLevelText; // 明るさレベルを表示するTextMeshPro
     [SerializeField] private TextMeshProUGUI colorTemperatureLevelText; // 色温度レベルを表示するTextMeshPro
-
+    //オブジェクトを表示
+   
     public float Brightness { get; private set; }
     public float ColorTemperature { get; private set; }
     public int BrightnessLevel { get; private set; }
