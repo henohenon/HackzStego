@@ -369,7 +369,6 @@ GameObject:
   - component: {fileID: 634998678062417232}
   - component: {fileID: 20794717116462537}
   - component: {fileID: 1213824884433785922}
-  - component: {fileID: 2137923165446959576}
   - component: {fileID: 7541725484223701386}
   m_Layer: 5
   m_Name: ResultPage
@@ -438,26 +437,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2137923165446959576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8038897839405043573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb9b38cbfd7f6d47917253c40395378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _usePrefabNameAsIdentifier: 1
-  _identifier: 
-  _renderingOrder: 0
-  _animationContainer:
-    _pushEnterAnimations: []
-    _pushExitAnimations: []
-    _popEnterAnimations: []
-    _popExitAnimations: []
 --- !u!114 &7541725484223701386
 MonoBehaviour:
   m_ObjectHideFlags: 0
