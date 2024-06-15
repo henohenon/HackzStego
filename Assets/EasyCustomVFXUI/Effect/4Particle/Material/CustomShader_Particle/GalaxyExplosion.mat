@@ -45,7 +45,7 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _QueueControl: 0
     m_Colors:
-    - _Color: {r: 4.1815667, g: 1.4122647, b: 2.746381, a: 0}
+    - _Color: {r: 1.0453917, g: 0.35306618, b: 0.68659526, a: 0}
     - _OffsetRange: {r: 0.1, g: 0.6, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1255237965311139499
