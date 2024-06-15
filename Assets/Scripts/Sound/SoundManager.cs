@@ -6,19 +6,24 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject clapManager;
+    
     public float VolumeRate { get; private set; }
     
     private AudioClip microphoneClip;
     private string microphone;
     private int sampleWindow = 128; // 音量を測定するサンプルウィンドウサイズ
 
-    void Start()
+    void Awake()
     {
         if (Microphone.devices.Length > 0)
         {
             microphone = Microphone.devices[0];
             microphoneClip = Microphone.Start(microphone, true, 10, 44100);
+            clapManager.SetActive(true);
         }
+        
     }
 
     void Update()

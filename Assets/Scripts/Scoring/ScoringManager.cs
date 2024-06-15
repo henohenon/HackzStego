@@ -13,6 +13,7 @@ public class ScoringManager : MonoBehaviour
     public ReadOnlyReactiveProperty<ushort> TemperatureLevel => _temperatureLevel;
     public ReadOnlyReactiveProperty<ushort> VolumeLevel => _volumeLevel;
     
+    public DebugInfo Info { get; private set; }
     
     [SerializeField]
     private LightEstimate lightEstimate;
@@ -24,10 +25,15 @@ public class ScoringManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _brightnessLevel.OnNext(CalcBrightnessLevel(lightEstimate.Brightness));
-        _temperatureLevel.OnNext(CalcTemperatureLevel(lightEstimate.ColorTemperature));
-        Debug.Log(soundManager.VolumeRate);
-        _volumeLevel.OnNext(CalcVolume(soundManager.VolumeRate));
+        var brightness = lightEstimate.Brightness;
+        var colorTemperature = lightEstimate.ColorTemperature;
+        var volumeRate = soundManager.VolumeRate;
+        
+        _brightnessLevel.OnNext(CalcBrightnessLevel(brightness));
+        _temperatureLevel.OnNext(CalcTemperatureLevel(colorTemperature));
+        _volumeLevel.OnNext(CalcVolume(volumeRate));
+        
+        Info = new DebugInfo(brightness, colorTemperature, volumeRate, _brightnessLevel.Value, _temperatureLevel.Value, _volumeLevel.Value);
     }
 
     public ushort GetAvgScore()
@@ -111,6 +117,26 @@ public class ScoringManager : MonoBehaviour
         {
             return 1;
         }
+    }
+}
+
+public struct DebugInfo
+{
+    public float Brightness;
+    public float ColorTemperature;
+    public float VolumeRate;
+    public ushort BrightnessLevel;
+    public ushort ColorTemperatureLevel;
+    public ushort VolumeLevel;
+    
+    public DebugInfo(float brightness, float colorTemperature, float volumeRate, ushort brightnessLevel, ushort colorTemperatureLevel, ushort volumeLevel)
+    {
+        Brightness = brightness;
+        ColorTemperature = colorTemperature;
+        VolumeRate = volumeRate;
+        BrightnessLevel = brightnessLevel;
+        ColorTemperatureLevel = colorTemperatureLevel;
+        VolumeLevel = volumeLevel;
     }
 }
 

@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 5088440506077944051}
   - component: {fileID: 8931773930077987747}
   - component: {fileID: 5805674789354867867}
-  - component: {fileID: 766015656555497329}
-  - component: {fileID: 2317872421576373375}
+  - component: {fileID: 4315057696742776212}
+  - component: {fileID: 5124082998823409699}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -166,8 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightEstimate: {fileID: 0}
-  soundManager: {fileID: 2317872421576373375}
---- !u!82 &766015656555497329
+  soundManager: {fileID: 5124082998823409699}
+  returnStar: 4
+--- !u!82 &4315057696742776212
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,7 +264,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2317872421576373375
+--- !u!114 &5124082998823409699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,7 +273,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100980457884100910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c238ed96cb2aa405eb60bb10a03f0108, type: 3}
+  m_Script: {fileID: 11500000, guid: 17445482f5c9b498bb4eebde37e49f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &501764319714831694
@@ -425,8 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd8a3a490f75498dad1820eb38c64b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lightEstimate: {fileID: 0}
-  _soundManager: {fileID: 2317872421576373375}
   _scoringManager: {fileID: 5805674789354867867}
   brightLevel: {fileID: 7674465750182458267}
   temperatureLevel: {fileID: 2564324127882887449}
