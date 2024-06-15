@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using R3;
 
+[RequireComponent(typeof(ResultByLevelManager))]
 public class ResultPageManager : MonoBehaviour
 {
     private Subject<Unit> _restart = new Subject<Unit>();
@@ -28,8 +29,8 @@ public class ResultPageManager : MonoBehaviour
     [SerializeField] private Toggle temperatureToggle;
     [SerializeField] private Toggle volumeToggle;
     [SerializeField] private Button backButton;
-    [SerializeField] private GameObject[] heartParticles;
     
+    private ResultByLevelManager _resultByLevel;
     
     // Start is called before the first frame update
     void Awake()
@@ -55,25 +56,12 @@ public class ResultPageManager : MonoBehaviour
 
     private void OnEnable()
     {
-        var avgScore = (int)Mathf.Round(_scoringManager.GetAvgScore());
+        var avgScore = (ushort)Mathf.Round(_scoringManager.GetAvgScore());
         Debug.Log("avgScore:" + avgScore);
         perText.text = "レベル：" + avgScore;
         detailText.text = _results[avgScore-1];
-        
-        DisableAllParticles();
-        heartParticles[avgScore-1].SetActive(true);
+
+        _resultByLevel.ChangeLevel(avgScore);
     }
     
-    private void OnDisable()
-    {
-        DisableAllParticles();
-    }
-    
-    private void DisableAllParticles()
-    {
-        foreach (var particle in heartParticles)
-        {
-            particle.SetActive(false);
-        }
-    }
 }

@@ -1030,6 +1030,7 @@ GameObject:
   - component: {fileID: 20794717116462537}
   - component: {fileID: 1213824884433785922}
   - component: {fileID: 7541725484223701386}
+  - component: {fileID: 6482449834757567548}
   m_Layer: 5
   m_Name: ResultPage
   m_TagString: Untagged
@@ -1120,7 +1121,19 @@ MonoBehaviour:
   temperatureToggle: {fileID: 7852964560807018760}
   volumeToggle: {fileID: 2561463380712228303}
   backButton: {fileID: 3286693414303799419}
-  heartParticles:
+--- !u!114 &6482449834757567548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8038897839405043573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e184b56d255642c68ea1ad5f929e479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
   - {fileID: 9156198927194335031}
   - {fileID: 962906696919432005}
   - {fileID: 8595154813743389423}
