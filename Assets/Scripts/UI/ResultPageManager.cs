@@ -5,18 +5,19 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using R3;
-using Random = UnityEngine.Random;
 
 public class ResultPageManager : MonoBehaviour
 {
     private Subject<Unit> _restart = new Subject<Unit>();
     public Observable<Unit> Restart => _restart;
     
-    private string[,] _results = new string[3, 2]
+    private string[] _results = new string[5]
     {
-        {"100%", "フィーバー¥nカーニバル"},
-        {"50%", "至って平穏"},
-        {"10%", "ボロボロ"}
+        "うーんwやめといた方がいいかも...",
+        "あとちょっと頑張れるはず！",
+        "五分五分。まぁ悪くはないかな",
+        "いい感じ！このまま行こう!",
+        "絶好調！今しかない！",
     };
     
     [SerializeField]
@@ -53,9 +54,9 @@ public class ResultPageManager : MonoBehaviour
 
     private void OnEnable()
     {
-        // ランダムに結果を表示
-        var result = Random.Range(0, 3);
-        perText.text = _results[result, 0];
-        detailText.text = _results[result, 1];
+        var avgScore = (int)Mathf.Round(_scoringManager.GetAvgScore());
+        Debug.Log("avgScore:" + avgScore);
+        perText.text = "レベル：" + avgScore;
+        detailText.text = _results[avgScore-1];
     }
 }

@@ -27,6 +27,10 @@ public class ScoringManager : MonoBehaviour
         _volumeLevel.OnNext(CalcVolume(soundManager.VolumeRate));
     }
 
+    public float GetAvgScore()
+    {
+        return ((float)(_brightnessLevel.Value + _temperatureLevel.Value + _volumeLevel.Value)) / 3;
+    }
     
     // 明るさと色温度のレベルを計算するメソッド
     private ushort CalcBrightnessLevel(float brightness)
