@@ -27,85 +27,75 @@ public class ScoringManager : MonoBehaviour
         _volumeLevel.OnNext(CalcVolume(soundManager.VolumeRate));
     }
 
-    public float GetAvgScore()
+    public ushort GetAvgScore()
     {
-        return ((float)(_brightnessLevel.Value + _temperatureLevel.Value + _volumeLevel.Value)) / 3;
-    }
-    
-    // 明るさと色温度のレベルを計算するメソッド
-    private ushort CalcBrightnessLevel(float brightness)
-    {
-        // Brightnessのレベルを5段階に分ける
-        if (brightness <= 0.2f)
-        {
-            return 1;
-        }
-        else if (brightness <= 0.4f)
-        {
-            return 2;
-        }
-        else if (brightness <= 0.6f)
+        var sum = _brightnessLevel.Value + _temperatureLevel.Value + _volumeLevel.Value;
+
+        if (sum >= 7)
         {
             return 3;
         }
-        else if (brightness <= 0.8f)
+        else if (sum <= 6 && sum >= 4)
         {
-            return 4;
+            return 2;
         }
         else
         {
-            return 5;
+            return 1;
         }
     }
-
+    
+    // 明るさのレベルを計算するメソッド
+    private ushort CalcBrightnessLevel(float brightness)
+    {
+        // Brightnessのレベルを5段階に分ける
+        if (brightness >= 50f && brightness < 250f)
+        {
+            return 3;
+        }
+        else if (brightness >= 250f && brightness < 500f)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    
+    // 色温度のレベルを計算するメソッド
     private ushort CalcTemperatureLevel(float temperature)
     {
         
         // ColorTemperatureのレベルを5段階に分ける
-        if (temperature <= 2500f)
-        {
-            return 1;
-        }
-        else if (temperature <= 4500f)
-        {
-            return 2;
-        }
-        else if (temperature <= 6500f)
+        if (temperature >= 1500 && temperature < 4000)
         {
             return 3;
         }
-        else if (temperature <= 8500f)
+        else if (temperature >= 4000 && temperature < 5000)
         {
-            return 4;
+            return 2;
         }
         else
         {
-            return 5;
+            return 1;
         }
     }
     
     private ushort CalcVolume(float volumeRate)
     {
         // ColorTemperatureのレベルを5段階に分ける
-        if (volumeRate >= 0.9f)
-        {
-            return 1;
-        }
-        else if (volumeRate >= 0.6f)
-        {
-            return 2;
-        }
-        else if (volumeRate >= 0.3f)
+        if (volumeRate >= 0.0001 && volumeRate < 0.002)
         {
             return 3;
         }
-        else if (volumeRate >= 0.1f)
+        else if (volumeRate >= 0.002 && volumeRate < 0.003)
         {
-            return 4;
+            return 2;
         }
         else
         {
-            return 5;
+            return 1;
         }
     }
 }
