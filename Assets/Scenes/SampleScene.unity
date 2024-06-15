@@ -1229,6 +1229,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3217872434258842811, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3325813807174103520, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
@@ -1430,3 +1434,4 @@ SceneRoots:
   - {fileID: 1548822378}
   - {fileID: 7007027384119752820}
   - {fileID: 920615362}
+  - {fileID: 369271284}

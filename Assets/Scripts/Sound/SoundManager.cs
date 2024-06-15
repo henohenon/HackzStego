@@ -21,9 +21,12 @@ public class SoundManager : MonoBehaviour
         {
             microphone = Microphone.devices[0];
             microphoneClip = Microphone.Start(microphone, true, 10, 44100);
-            clapManager.SetActive(true);
         }
-        
+    }
+
+    void Start()
+    {
+        clapManager.SetActive(true);
     }
 
     void Update()
