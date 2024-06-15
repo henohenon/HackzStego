@@ -1085,6 +1085,50 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: ShapeModule.donutRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.60975647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899104556010738573, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020991013249259737, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020991013249259737, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8790258444119487576, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_SizeDelta.y
       value: 600
@@ -1097,6 +1141,8 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 813298522608208753, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
     - {fileID: 6127558111711861919, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+    - {fileID: 3194529896028856559, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+    - {fileID: 4530286927267138414, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 239599677316704411, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       insertIndex: -1
