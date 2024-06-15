@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         searchPageManger.Search.Subscribe(async (_) =>
         {
             ChangePage(Page.Searching);
-            await UniTask.Delay(TimeSpan.FromSeconds(3));
+            await UniTask.Delay(TimeSpan.FromSeconds(2));
             ChangePage(Page.Result);
         });
         resultPageManager.Restart.Subscribe(async (_) =>
