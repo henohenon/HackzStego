@@ -547,10 +547,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraManager: {fileID: 647845305}
-  brightnessText: {fileID: 1663605754}
-  colorTemperatureText: {fileID: 1560148240}
-  brightnessLevelText: {fileID: 1760414696}
-  colorTemperatureLevelText: {fileID: 852842079}
 --- !u!1 &852842077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1466,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5805674789354867867, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: lightEstimate
+      value: 
+      objectReference: {fileID: 705507996}
     - target: {fileID: 6864156859113376946, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_Type
       value: 0
