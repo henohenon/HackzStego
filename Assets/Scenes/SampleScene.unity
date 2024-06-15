@@ -896,13 +896,29 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4798056778114441478, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798056778114441478, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798056778114441478, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798056778114441478, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -540
+      objectReference: {fileID: 0}
     - target: {fileID: 5086693689970258463, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2600
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5086693689970258463, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3900
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5086693689970258463, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_LocalScale.x
@@ -918,7 +934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5086693689970258463, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1400
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5086693689970258463, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -931,7 +947,7 @@ PrefabInstance:
     - target: {fileID: 6864156859113376946, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 746423972ffa6b54d8c71374b0a79b62, type: 3}
+      objectReference: {fileID: 21300000, guid: a53c79372dab0d04cb461bc39d577f0c, type: 3}
     - target: {fileID: 6864156859113376946, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_Maskable
       value: 1
@@ -943,6 +959,10 @@ PrefabInstance:
     - target: {fileID: 6864156859113376946, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_RaycastTarget
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436985051672334325, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
