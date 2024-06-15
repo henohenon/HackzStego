@@ -9,7 +9,7 @@ public class ResultByLevelManager : MonoBehaviour
 
     private void DisableAll()
     {
-        for (var i = 0; i < 5; i++)
+        for (var i = 0; i < particles.Length; i++)
         {
             particles[i].SetActive(false);    
         }
