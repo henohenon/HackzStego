@@ -6,12 +6,18 @@ using UnityEngine;
 public class ResultByLevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] particles;
-
+    [SerializeField] private GameObject[] stars;
+    
     private void DisableAll()
     {
         for (var i = 0; i < particles.Length; i++)
         {
-            particles[i].SetActive(false);    
+            particles[i].SetActive(false);  
+        }
+
+        for (var i = 0; i < stars.Length; i++)
+        {
+            stars[i].SetActive(false);
         }
     }
     
@@ -20,6 +26,10 @@ public class ResultByLevelManager : MonoBehaviour
         DisableAll();
         
         particles[level].SetActive(true);
+        for(var i = 0; i < level+1; i++)
+        {
+            stars[i].SetActive(true);
+        }
     }
 
     private void OnDisable()
