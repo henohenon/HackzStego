@@ -910,6 +910,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3325813807174103520, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4110616642920187956, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -996,7 +1000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127558111711861919, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6634603093128037935, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: m_FontData.m_FontStyle
