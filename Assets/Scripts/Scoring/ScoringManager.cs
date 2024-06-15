@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using R3;
@@ -14,9 +15,11 @@ public class ScoringManager : MonoBehaviour
     
     
     [SerializeField]
-    LightEstimate lightEstimate;
+    private LightEstimate lightEstimate;
     [SerializeField]
-    SoundManager soundManager;
+    private SoundManager soundManager;
+    [SerializeField]
+    private ReturnStar returnStar;
 
     // Update is called once per frame
     void Update()
@@ -31,18 +34,29 @@ public class ScoringManager : MonoBehaviour
     {
         var sum = _brightnessLevel.Value + _temperatureLevel.Value + _volumeLevel.Value;
 
-        if (sum >= 7)
+        switch (returnStar)
         {
-            return 3;
+            case ReturnStar.OneStar:
+                return 1;
+            case ReturnStar.TwoStar:
+                return 2;
+            case ReturnStar.ThreeStar:
+                return 3;
+            case ReturnStar.AutoStar:
+                if (sum >= 7)
+                {
+                    return 3;
+                }
+                else if (sum <= 6 && sum >= 4)
+                {
+                    return 2;
+                }
+                else
+                {
+                    return 1;
+                }
         }
-        else if (sum <= 6 && sum >= 4)
-        {
-            return 2;
-        }
-        else
-        {
-            return 1;
-        }
+        return 1;
     }
     
     // 明るさのレベルを計算するメソッド
@@ -98,4 +112,12 @@ public class ScoringManager : MonoBehaviour
             return 1;
         }
     }
+}
+
+public enum ReturnStar
+{
+    OneStar = 1,
+    TwoStar = 2,
+    ThreeStar = 3,
+    AutoStar = 4
 }
