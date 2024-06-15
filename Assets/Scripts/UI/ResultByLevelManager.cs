@@ -9,7 +9,7 @@ public class ResultByLevelManager : MonoBehaviour
 
     [SerializeField] private GameObject[] fog_particles;
 
-
+    [SerializeField] private GameObject[] filters;
     [SerializeField] private GameObject[] stars;
     
 
@@ -20,7 +20,7 @@ public class ResultByLevelManager : MonoBehaviour
             particles[i].SetActive(false); 
             fog_particles[i].SetActive(false);
             stars[i].SetActive(false);
-            particles[i].SetActive(false);  
+            filters[i].SetActive(false);  
         }
 
     }
@@ -31,6 +31,7 @@ public class ResultByLevelManager : MonoBehaviour
         
         particles[level].SetActive(true);
         fog_particles[level].SetActive(true);
+        filters[level].SetActive(true);
 
         for(var i = 0; i < level+1; i++)
         {
