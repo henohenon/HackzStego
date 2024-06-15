@@ -667,6 +667,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 859675392970748738, guid: 9a98c8e205f924e4390595b844a3d4f7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8038897839405043573, guid: 9a98c8e205f924e4390595b844a3d4f7, type: 3}
       propertyPath: m_Name
       value: SearchPage
@@ -674,13 +678,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 513039042527259477, guid: 9a98c8e205f924e4390595b844a3d4f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7705025327438597516}
   m_SourcePrefab: {fileID: 100100000, guid: 9a98c8e205f924e4390595b844a3d4f7, type: 3}
 --- !u!224 &5023282888193295373 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 634998678062417232, guid: 9a98c8e205f924e4390595b844a3d4f7, type: 3}
   m_PrefabInstance: {fileID: 5582702957625835869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5361272060099291656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 513039042527259477, guid: 9a98c8e205f924e4390595b844a3d4f7, type: 3}
+  m_PrefabInstance: {fileID: 5582702957625835869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7705025327438597516
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361272060099291656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f137359df7313c459445a483682cea2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6786584181017434103 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1393710813933196970, guid: 9a98c8e205f924e4390595b844a3d4f7, type: 3}
