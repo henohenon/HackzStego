@@ -58,15 +58,15 @@ public class ResultPageManager : MonoBehaviour
         });
         _scoringManager.BrightnessLevel.Subscribe(level =>
         {
-            brightnessToggle.isOn = level > 3;
+            brightnessToggle.isOn = level == 3;
         });
         _scoringManager.TemperatureLevel.Subscribe(level =>
         {
-            temperatureToggle.isOn = level > 3;
+            temperatureToggle.isOn = level == 3;
         });
         _scoringManager.VolumeLevel.Subscribe(level =>
         {
-            volumeToggle.isOn = level > 3;
+            volumeToggle.isOn = level == 3;
         });
         
         _resultByLevel = GetComponent<ResultByLevelManager>();
