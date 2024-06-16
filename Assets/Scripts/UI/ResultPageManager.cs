@@ -23,11 +23,13 @@ public class ResultPageManager : MonoBehaviour
     
     [SerializeField]
     private ScoringManager _scoringManager;
+    [SerializeField] private Start_music _startMusic;
     [SerializeField] private Text detailText;
     [SerializeField] private Toggle brightnessToggle;
     [SerializeField] private Toggle temperatureToggle;
     [SerializeField] private Toggle volumeToggle;
     [SerializeField] private Button backButton;
+    [SerializeField] private Button start_music;
     
     private ResultByLevelManager _resultByLevel;
     
@@ -37,6 +39,10 @@ public class ResultPageManager : MonoBehaviour
         backButton.onClick.AddListener(() =>
         {
             _restart.OnNext(Unit.Default); 
+        });
+        start_music.onClick.AddListener(() =>
+        {
+            _startMusic.start_music();
         });
         _scoringManager.BrightnessLevel.Subscribe(level =>
         {

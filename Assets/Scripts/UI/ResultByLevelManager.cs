@@ -11,10 +11,14 @@ public class ResultByLevelManager : MonoBehaviour
 
     [SerializeField] private GameObject[] filters;
     [SerializeField] private GameObject[] stars;
-    
+    [SerializeField] private GameObject end_button;    
+    [SerializeField] private GameObject start_music;  
+
 
     private void DisableAll()
     {
+        end_button.SetActive(false);
+        start_music.SetActive(false);
         for (var i = 0; i < particles.Length; i++)
         {
             particles[i].SetActive(false); 
@@ -36,6 +40,14 @@ public class ResultByLevelManager : MonoBehaviour
         for(var i = 0; i < level+1; i++)
         {
             stars[i].SetActive(true);
+        }
+        if(level == 2)
+        {
+            start_music.SetActive(true);
+        }
+        else
+        {
+            end_button.SetActive(true);
         }
 
     }
