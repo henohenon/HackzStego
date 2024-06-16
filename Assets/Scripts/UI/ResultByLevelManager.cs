@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class ResultByLevelManager : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class ResultByLevelManager : MonoBehaviour
     [SerializeField] private GameObject[] filters;
     [SerializeField] private GameObject[] stars;
     [SerializeField] private GameObject end_button;    
-    [SerializeField] private GameObject start_music;  
+    [SerializeField] private GameObject start_music;
+    [SerializeField] private GameObject[] waitStars;
 
 
     private void DisableAll()
@@ -27,9 +29,14 @@ public class ResultByLevelManager : MonoBehaviour
             filters[i].SetActive(false);  
         }
 
+        foreach (var wait in waitStars)
+        {
+            wait.SetActive(false);
+        }
+
     }
     
-    public void ChangeLevel(int level)
+    public async UniTask ChangeLevel(int level)
     {
         DisableAll();
         
@@ -40,7 +47,15 @@ public class ResultByLevelManager : MonoBehaviour
         for(var i = 0; i < level+1; i++)
         {
             stars[i].SetActive(true);
+            await UniTask.Delay(TimeSpan.FromSeconds(0.24f));
         }
+        await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
+
+        foreach (var wait in waitStars)
+        {
+            wait.SetActive(true);
+        }
+        
         if(level == 2)
         {
             start_music.SetActive(true);
