@@ -30,12 +30,16 @@ public class ResultPageManager : MonoBehaviour
     [SerializeField] private Toggle volumeToggle;
     [SerializeField] private Button backButton;
     [SerializeField] private Button start_music;
+    [SerializeField] private Button end_music;
+    [SerializeField] private GameObject start_music_object;
+    [SerializeField] private GameObject end_music_object;
     
     private ResultByLevelManager _resultByLevel;
     
     // Start is called before the first frame update
     void Awake()
     {
+        end_music_object.SetActive(false);
         backButton.onClick.AddListener(() =>
         {
             _restart.OnNext(Unit.Default); 
@@ -43,6 +47,14 @@ public class ResultPageManager : MonoBehaviour
         start_music.onClick.AddListener(() =>
         {
             _startMusic.start_music();
+            start_music_object.SetActive(false);
+            end_music_object.SetActive(true);
+        });
+        end_music.onClick.AddListener(() =>
+        {
+            _startMusic.stop_music();
+            end_music_object.SetActive(false);
+            _restart.OnNext(Unit.Default);
         });
         _scoringManager.BrightnessLevel.Subscribe(level =>
         {

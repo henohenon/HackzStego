@@ -14,4 +14,12 @@ public class Start_music : MonoBehaviour
 
         
     }
+
+    public void stop_music()
+    {
+        for(var i = 0; i < 6; i++)
+        {
+            AudioSources[i].Stop();
+        }
+    }
 }
