@@ -73,12 +73,10 @@ public class ResultPageManager : MonoBehaviour
     }
 
 
-    private void OnEnable()
+    void OnEnable()
     {
         var avgScore = (int)Mathf.Round(_scoringManager.GetAvgScore());
-        Debug.Log("avgScore:" + avgScore);
-        detailText.text = _results[avgScore-1];
-
+        detailText.text = _results[avgScore-1]; 
         _resultByLevel.ChangeLevel(avgScore-1);
     }
     
