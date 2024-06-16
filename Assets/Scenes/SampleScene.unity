@@ -2370,7 +2370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805674789354867867, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: returnStar
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5805674789354867867, guid: 5d764de2b471e4b29be9690ac3c0535f, type: 3}
       propertyPath: lightEstimate
